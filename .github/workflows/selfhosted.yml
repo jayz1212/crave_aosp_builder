@@ -92,9 +92,11 @@ jobs:
         echo "DCDEVSPACE status: ${DCDEVSPACE}"
         if [[ "${DCDEVSPACE}" == "1" ]]; then
         echo 'No need to set up crave, we are already running in devspace!'
-        mkdir -p ${HOME}/bin/
+        rm -rf /home/admin/bin
+        mkdir -p /home/admin/bin
         else
-          mkdir ${HOME}/bin/
+          rm -rf /home/admin/bin
+          mkdir -p /home/admin/bin
           curl -s https://raw.githubusercontent.com/accupara/crave/master/get_crave.sh | bash -s --
           mv ${PWD}/crave ${HOME}/bin/
           sudo ln -sf /home/${USER}/bin/crave /usr/bin/crave
