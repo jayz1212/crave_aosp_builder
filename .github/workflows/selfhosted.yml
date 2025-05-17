@@ -92,8 +92,8 @@ jobs:
         echo "DCDEVSPACE status: ${DCDEVSPACE}"
         if [[ "${DCDEVSPACE}" == "1" ]]; then
         echo 'No need to set up crave, we are already running in devspace!'
-        rm -rf /home/admin/bin
-        mkdir -p /home/admin/bin
+        sudo find /home/admin/bin -delete
+        sudo mkdir -p /home/admin/bin
         else
           rm -rf /home/admin/bin
           mkdir -p /home/admin/bin
