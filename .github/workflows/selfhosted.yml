@@ -274,7 +274,7 @@ jobs:
         PROJECTID="${{ needs.prepare.outputs.PROJECTID }}"
         REPO_INIT="${{ needs.prepare.outputs.REPO_INIT }}"
         LUNCH="${{ needs.prepare.outputs.LUNCH }}"
-        LOCAL_MANIFEST="${{ needs.test.outputs.LOCAL_MANIFEST }}"
+        LOCAL_MANIFEST="${{ needs.prepare.outputs.LOCAL_MANIFEST }}"
 
         echo "PROJECTFOLDER=$PROJECTFOLDER" >> "$GITHUB_ENV"
         echo "PROJECTID=$PROJECTID"  >> "$GITHUB_ENV"
